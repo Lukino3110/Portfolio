@@ -1,0 +1,120 @@
+html,
+body {
+    /*margin: 0px;
+    padding: 0px;*/
+
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    font-family: sans-serif;
+
+    /* Centrování pomocí flexboxu */
+    display: flex;
+    justify-content: center;
+    /* horizontálně */
+    align-items: center;
+    /* vertikálně */
+    min-height: 100vh;
+    /* výška celé obrazovky */
+
+}
+
+header {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* vystředí kontejner */
+    padding: 0;
+    border-bottom: 2px solid white;
+    /* čára mezi headerem a tělem */
+    width: 670px;
+
+}
+
+.header-container {
+    width: 670px;
+    /* stejná šířka jako bílý box */
+    display: flex;
+    justify-content: space-between;
+    /* první odkaz vlevo, druhý vpravo */
+}
+
+.header-container a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-container {
+    width: 670px;
+    /* stejná šířka jako box */
+    display: flex;
+    justify-content: space-between;
+    /* první odkaz vlevo, druhý vpravo */
+    align-items: center;
+}
+
+/* Odkazy */
+.nav-container a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease, color 0.2s ease, text-decoration-color 0.2s ease;
+
+}
+
+.nav-container a:hover {
+    text-decoration: underline;
+}
+
+
+body {
+    color: #e6e6e6;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    /*display: flex;
+    flex-direction: column;
+    padding: 1rem;*/
+
+    /*max-width: 600px;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);*/
+
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+
+
+}
+
+.project-card {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: #e6e6e6;
+    border-top: 2px solid white;
+    width: 640px;
+}
