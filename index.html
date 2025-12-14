@@ -68,8 +68,75 @@
             <label for="">JavaScript</label>
             <progress min= "0" max="10" value="1"></progress>
 
-
         </div>
+
+        <section class="contact-section">
+            <h2>Kontaktujte mě</h2>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                <label for="name">Jméno</label>
+                <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+                </div>
+
+                <div class="form-group">
+                <label for="email">E‑mail</label>
+                <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+                </div>
+
+                <div class="form-group">
+                <label for="service">O jakou službu máte zájem?</label>
+                <select id="service" name="service" required>
+                    <option value="">Vyberte službu…</option>
+                    <option value="web">Tvorba webu</option>
+                    <option value="design">Grafický design</option>
+                    <option value="consulting">Konzultace</option>
+                </select>
+                </div>
+
+                <div class="form-group">
+                <label for="message">Zpráva</label>
+                <textarea id="message" name="message" placeholder="Vaše zpráva…" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Odeslat</button>
+
+                <p id="formResponse" class="form-response"></p>
+            </form>
+        </section>
+
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", async (e) => {e.preventDefault();
+
+            const formResponse = document.getElementById("formResponse");
+            formResponse.textContent = "Odesílám…";
+
+            const data = {
+                name: e.target.name.value,
+                email: e.target.email.value,
+                service: e.target.service.value,
+                message: e.target.message.value
+            };
+
+            try {
+                const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+                formResponse.textContent = result.message;
+                formResponse.style.color = "green";
+
+            }
+            catch (error) {
+                formResponse.textContent = "Nastala chyba při odesílání.";
+                formResponse.style.color = "red";
+            }
+            });
+        </script>
+
     </main>
 
     <footer>
