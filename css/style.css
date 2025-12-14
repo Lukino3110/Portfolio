@@ -208,4 +208,58 @@ progress::-webkit-progress-value {
 
 progress::-moz-progress-bar {
     background: #e6e6e6;
+
+}
+
+
+/* FORMULÁŘ */
+.contact-section {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 14px;
+  background: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #005fcc;
+}
+
+.form-response {
+  margin-top: 10px;
+  font-weight: 600;
 }
